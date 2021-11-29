@@ -1,13 +1,9 @@
-# This workflow will build a Java project with Ant
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-ant
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Java CI
+name: Java CI with Gradle
 
-on:
-  push:
-    branches: [ junit4 ]
-  pull_request:
-    branches: [ master ]
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -21,5 +17,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Ant
-      run: ant -noinput -buildfile build.xml
+        cache: gradle
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
