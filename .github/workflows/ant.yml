@@ -5,7 +5,7 @@ name: Java CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master junit4 testng ]
   pull_request:
     branches: [ master ]
 
