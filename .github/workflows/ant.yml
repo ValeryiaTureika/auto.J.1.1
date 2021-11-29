@@ -3,7 +3,11 @@
 
 name: Java CI
 
-on: [ push, pull_request ]
+on:
+  push:
+    branches: [ master, testng, junit4 ]
+  pull_request:
+    branches: [ master, testng, junit4 ]
 
 jobs:
   build:
