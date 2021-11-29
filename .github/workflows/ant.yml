@@ -3,10 +3,11 @@
 
 name: Java CI
 
-push:
-    branches: [ master, testng, junit4 ]
+on:
+  push:
+    branches: [ master ]
   pull_request:
-    branches: [ master, testng, junit4 ]
+    branches: [ master ]
 
 jobs:
   build:
