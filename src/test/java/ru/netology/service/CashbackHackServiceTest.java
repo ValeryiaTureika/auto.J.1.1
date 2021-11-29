@@ -7,21 +7,21 @@ import static org.junit.Assert.*;
 public class CashbackHackServiceTest {
 
     @Test
-    public void shouldSumZero() {
-        CashbackHackService cashback = new CashbackHackService();
-
-        int actual = cashback.remain(0);
-        int expected = 1000;
-
-        assertEquals(actual, expected);
-    }
-
-    @Test
     public void shouldSumFiveHundred() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(500);
         int expected = 500;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldSumZero() {
+        CashbackHackService cashback = new CashbackHackService();
+
+        int actual = cashback.remain(0);
+        int expected = 1000;
 
         assertEquals(actual, expected);
     }
